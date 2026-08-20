@@ -5,6 +5,7 @@ using System.Text.Json.Serialization;
 using apitest.DTO;
 using NUnit.Framework;
 namespace apitest;
+
 public class Tests
 {
     private static HttpClient client;

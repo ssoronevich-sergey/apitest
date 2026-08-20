@@ -1,5 +1,4 @@
-﻿
-namespace apitest.DTO;
+﻿namespace apitest.DTO;
 
 public class CreateUserRequestDTO
 {
