@@ -10,5 +10,11 @@ public interface IUserApiClient
     Task<UserResponceDTO> getUserAsync(int id);
     
     [Post("/users")] 
-    Task <CreatedUserDTO> PostUserAsync ([Body]CreatedUserDTO user);
+    Task <CreatedUserDTO> PostUserAsync ([Body] CreatedUserDTO user);
+    
+    [Put("/users/{id}")]
+    Task<CreateUserRequestDTO> PutUserAsync(int id, [Body] CreateUserRequestDTO user);
+    
+    [Delete("/users/{id}")]
+    Task<ApiResponse<string>> DeleteUserAsync(int id);
 }

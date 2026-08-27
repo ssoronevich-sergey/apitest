@@ -71,7 +71,6 @@ public class Tests
         // визуальный отчет в консоль
         Console.WriteLine($"Created user: Id={createdUser.Id}, CreatedAt= {createdUser.CreatedAt}");
     }
-
     [Test]
     public async Task Test4()
     {

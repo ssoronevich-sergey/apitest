@@ -1,4 +1,5 @@
-﻿using Refit;
+﻿using System.Net;
+using Refit;
 using apitest.DTO;
 using apitest.Interfaces;
 using FxResources.Microsoft.Extensions.DependencyInjection;
@@ -26,8 +27,13 @@ public class RefitTests
         var result = await _userApiClient.getUserAsync(2);
         Assert.Multiple(() =>
             {
-                Assert.That(result.Data.Id, Is.EqualTo (2));
-                Assert.That(result.Data.Email, Is.Not.Null);
+                
+                Assert.Multiple(()=>
+                {
+                    Assert.That(result.Data.Id, Is.EqualTo (2));
+                    Assert.That(result.Data.Email, Is.Not.Null);
+                }
+                );
             }
 
 
@@ -36,8 +42,23 @@ public class RefitTests
     [Test]
     public async Task Test2()
     {
-        var newUser = new CreateUserRequestDTO("Sergo Pozollini", "ООО Тепленькая пошла");
-        var responce = await _userApiClient.PostUserAsync(newUser);
-        Assert.That (responce.Name, Is.EqualTo("Sergo Pozollini"));
+        var newUser = new CreatedUserDTO { Name = "Sergo Pozollini", Job = "ООО Тепленькая пошла" };
+        var response = await _userApiClient.PostUserAsync(newUser);
+        Assert.That(response.Name, Is.EqualTo("Sergo Pozollini"));
+    }
+    
+    [Test]
+    public async Task Test3()
+    {
+        var updateUser = new CreateUserRequestDTO { Name = "Sergo Pozollini", Job = "ООО Холодненькая пришла" };
+        var response = await _userApiClient.PutUserAsync(2, updateUser);
+        Assert.That(response.Job, Is.EqualTo("ООО Холодненькая пришла"));
+    }
+
+    [Test]
+    public async Task Test4()
+    {
+        var response = await _userApiClient.DeleteUserAsync(2);
+        Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.NoContent)); 
     }
 }
