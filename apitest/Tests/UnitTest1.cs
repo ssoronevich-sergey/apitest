@@ -17,7 +17,7 @@ public class Tests
         {
             BaseAddress = new Uri("https://reqres.in/api/")
         };
-        client.DefaultRequestHeaders.Add("x-api-key", "free_user_3HpELMQtbGQTO17ItccFNl2nZss");
+        client.DefaultRequestHeaders.Add("x-api-key", "free_user_3Ih9iVe7yOM8DeQVEi3asnhbO3L");
     }
 
     [Test]
@@ -113,5 +113,3 @@ public class Tests
         client.Dispose();
     }
 }
-
-//free_user_3HpELMQtbGQTO17ItccFNl2nZss

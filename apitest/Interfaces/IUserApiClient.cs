@@ -3,7 +3,7 @@ using Refit;
 namespace apitest.Interfaces;
 
 
-[Headers("x-api-key:free_user_3HpELMQtbGQTO17ItccFNl2nZss")]
+[Headers("x-api-key:free_user_3Ih9iVe7yOM8DeQVEi3asnhbO3L")]
 public interface IUserApiClient
 {
     [Get("/users/{id}")]
