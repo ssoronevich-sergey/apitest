@@ -5,8 +5,8 @@ namespace apitest.DTO.UserDTOs;
 public record GeoDTO
 {
     [JsonPropertyName("lat")]
-    public double Lat { get; init; }
+    public double Lat { get; set; }
 
     [JsonPropertyName("lng")]
-    public double Lng { get; init; }
+    public double Lng { get; set; }
 }

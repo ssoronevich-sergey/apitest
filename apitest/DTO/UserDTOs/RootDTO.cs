@@ -5,5 +5,5 @@ namespace apitest.DTO.UserDTOs;
 public record RootDTO
 {
     [JsonPropertyName("data")]
-    public List<UserDTO> Data { get; init; }
+    public List<UserDTO> Data { get; set; }
 }

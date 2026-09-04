@@ -5,11 +5,11 @@ namespace apitest.DTO.UserDTOs;
 public record AddressDTO
 {
     [JsonPropertyName("street")]
-    public string Street { get; init; }
+    public string Street { get; set; }
 
     [JsonPropertyName("city")]
-    public string City { get; init; }
+    public string City { get; set; }
 
     [JsonPropertyName("geo")]
-    public GeoDTO Geo { get; init; }
+    public GeoDTO Geo { get; set; }
 }

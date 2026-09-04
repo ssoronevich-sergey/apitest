@@ -5,14 +5,14 @@ namespace apitest.DTO.UserDTOs;
 public record ProfileDTO
 {
     [JsonPropertyName("fullName")]
-    public string FullName { get; init; }
+    public string FullName { get; set; }
 
     [JsonPropertyName("age")]
-    public int Age { get; init; }
+    public int Age { get; set; }
 
     [JsonPropertyName("address")]
-    public AddressDTO Address { get; init; }
+    public AddressDTO Address { get; set; }
 
     [JsonPropertyName("tags")]
-    public List<string> Tags { get; init; }
+    public List<string> Tags { get; set; }
 }
