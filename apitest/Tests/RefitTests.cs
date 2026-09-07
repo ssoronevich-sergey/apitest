@@ -35,10 +35,9 @@ public class RefitTests
                 }
                 );
             }
-
-
-        );
+       );
     }
+    
     [Test]
     public async Task Test2()
     {
