@@ -5,6 +5,7 @@ using System.Text.Json.Serialization;
 using apitest.DTO;
 using NUnit.Framework;
 namespace apitest;
+
 public class Tests
 {
     private static HttpClient client;
@@ -16,7 +17,7 @@ public class Tests
         {
             BaseAddress = new Uri("https://reqres.in/api/")
         };
-        client.DefaultRequestHeaders.Add("x-api-key", "free_user_3HpELMQtbGQTO17ItccFNl2nZss");
+        client.DefaultRequestHeaders.Add("x-api-key", "free_user_3Ih9iVe7yOM8DeQVEi3asnhbO3L");
     }
 
     [Test]
@@ -70,7 +71,6 @@ public class Tests
         // визуальный отчет в консоль
         Console.WriteLine($"Created user: Id={createdUser.Id}, CreatedAt= {createdUser.CreatedAt}");
     }
-
     [Test]
     public async Task Test4()
     {
@@ -113,5 +113,3 @@ public class Tests
         client.Dispose();
     }
 }
-
-//free_user_3HpELMQtbGQTO17ItccFNl2nZss

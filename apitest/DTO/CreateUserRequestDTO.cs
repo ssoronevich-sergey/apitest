@@ -1,5 +1,4 @@
-﻿using System.Text.Json.Serialization;
-namespace apitest.DTO;
+﻿namespace apitest.DTO;
 
 public class CreateUserRequestDTO
 {

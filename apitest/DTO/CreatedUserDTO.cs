@@ -12,5 +12,3 @@ public class CreatedUserDTO
       [JsonPropertyName("createdAt")]
       public string CreatedAt { get; set; }
 }
-
-// Name, Job, Id, CreatedAt
