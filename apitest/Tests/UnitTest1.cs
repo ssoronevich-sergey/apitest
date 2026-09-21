@@ -4,7 +4,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using apitest.DTO;
 using NUnit.Framework;
-namespace apitest;
+namespace apitest.Tests;
 
 public class Tests
 {
