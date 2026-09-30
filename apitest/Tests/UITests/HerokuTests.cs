@@ -72,12 +72,21 @@ public class HerokuTests : BaseTest
         //универсальная проверка
         var text2 = await dropdown.InnerTextAsync();
         text.Should().Contain("Option 2");
-       
-        //нестандартный дропдаун
-        await dropdown.ClickAsync();
-        var option2 = Page.Locator("//option[text()='Option 2']");
-        await option2.ClickAsync();
-        var textFromDropdown = await dropdown.InnerTextAsync();
-        textFromDropdown.Should().Be("Option 2");
     }
+    
+    [Test]
+    //нестандартный дропдаун
+    public async Task Should_Select_Sub_Item()
+    {
+        await Page.GotoAsync("https://demoqa.com/select-menu");
+        var dropdown = Page.Locator("#withOptGroup");
+        await dropdown.ClickAsync();
+
+        var option = Page.GetByText("Group 1, option 1");
+        await option.ClickAsync();
+
+        var text = await dropdown.TextContentAsync();
+        await Assertions.Expect(dropdown).ToContainTextAsync("Group 1, option 1");
+    }
+    
 }
