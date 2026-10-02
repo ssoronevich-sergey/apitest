@@ -39,7 +39,7 @@ public class HerokuTests : BaseTest
         await passTextBox.FillAsync("secret_sauce");
         var loginButton = Page.Locator("//input[@id='login-button']");
         await loginButton.ClickAsync();
-        var products = Page.Locator("span.title", new() {HasTextString = "Products"});;
+        var products = Page.Locator("//span[text()='Products']");
     }
 
     [Test]
